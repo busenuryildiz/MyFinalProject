@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -37,8 +38,12 @@ namespace Business.Concrete
             return _productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max);
 
         }
-        
 
-        //customer citysi London olanları getir
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            return _productDal.GetProductDetails();
+        }
+
+
     }
 }
